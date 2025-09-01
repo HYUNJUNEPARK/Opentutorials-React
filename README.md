@@ -77,11 +77,25 @@ function Greeting({ name, age }) {
 ```
 </br></br>
 
-## 이벤트
+## 이벤트   
+- “사용자가 웹 화면에서 뭘 했을 때, 우리 코드가 어떻게 반응할지”를 정의하는 장치
+```javascript
+function Header(props){
+  return <header>
+    <h1><a href="/" onClick={(event)=>{
+      event.preventDefault(); //<a>의 기본 동작을 방지
+      props.onChangeMode();
+    }}>{props.title}</a></h1>
+  </header>
+}
 
+<Header title="WEB" onChangeMode={()=>{
+  alert('Header');
+}}></Header>
+
+``` 
 
 </br></br>
-
 
 
 
