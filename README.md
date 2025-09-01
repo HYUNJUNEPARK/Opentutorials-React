@@ -48,23 +48,45 @@ https://code.visualstudio.com/Download
 </br></br>
 
 
-## props
+## props  
+- 컴포넌트의 입력값(속성)인 props
+- 컴포넌트에 외부에서 값을 전달하는 방법
+- 읽기 전용 (immutable): 자식 컴포넌트는 props를 직접 수정할 수 없다.
 
+```javasript
+//props 예시
+//1.부모 → 자식 데이터 전달
+function Header(props){
+  console.log('props', props, props.title);
+  return <header>
+    <h1><a href="/">{props.title}</a></h1>
+  </header>
+}
 
+<Header title="WEB"></Header>
 
+//2.기본값 설정
+function Greeting({ name = "손님" }) {
+  return <h1>Hello, {name}!</h1>;
+}
 
-
-
-
-
-
-
-
+//3.구조 분해 할당
+function Greeting({ name, age }) {
+  return <p>{name} is {age} years old.</p>;
+}
+```
 </br></br>
-
 
 ## 이벤트
+
+
 </br></br>
+
+
+
+
+
+
 ## state
 </br></br>
 ## 생성 기능 구현
