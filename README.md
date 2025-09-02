@@ -246,7 +246,7 @@ function App() {
 
 ## 삭제 기능 구현
 ```javascript
-fun App() {
+function App() {
    const [topics, setTopics] = useState([
      {id:1, title:'html', body:'html is ...'},
      {id:2, title:'css', body:'css is ...'},
