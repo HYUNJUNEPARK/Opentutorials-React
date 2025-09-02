@@ -1,15 +1,15 @@
 # React
 
 
-[](#실습환경-구축)1. 실습환경구축  
-[](#소스코드-수정-방법)2. 소스코드 수정 방법  
-[](#컴포넌트(사용자-정의-태그)-만들기)3. 컴포넌트(사용자 정의 태그) 만들기  
-[](#props)4. props  
-[](#이벤트)5. 이벤트  
-[](#state)6. state  
-[](#생성-기능-구현(CREATE))7. 생성 기능 구현(CREATE)  
-[](#수정-기능-구현(UPDATE))8. 수정 기능 구현(UPDATE)  
-[](#삭제-기능-구현(DELETE))9. 삭제 기능 구현(DELETE)  
+[1. 실습환경구축](#실습환경-구축)  
+[2. 소스코드 수정 방법](#소스코드-수정-방법)  
+[3. 컴포넌트 만들기](#컴포넌트-만들기)  
+[4. props](#props)   
+[5. 이벤트  ](#이벤트)  
+[6. state ](#state)    
+[7. 생성 기능 구현](#생성-기능-구현)  
+[8. 수정 기능 구현](#수정-기능-구현)  
+[9. 삭제 기능 구현](#삭제-기능-구현)   
 </br></br>
 
 
@@ -52,7 +52,7 @@ https://code.visualstudio.com/Download
 </br></br>
 
 
-## 컴포넌트(사용자 정의 태그) 만들기
+## 컴포넌트 만들기
 - 컴포넌트(사용자 정의 태그)를 만들 때는 함수 사용한다. 이때 컴포넌트 명명법은 대문자로 시작하며, 소문자는 html 태그를 의미한다.
 </br></br>
 
@@ -131,7 +131,7 @@ function Counter() {
 </br></br>
 
 
-## 생성 기능 구현(CREATE)
+## 생성 기능 구현
 ```javascript
 import {useState} from 'react';
 
@@ -177,10 +177,62 @@ function App() {
 </br></br>
 
 
-## 수정 기능 구현(UPDATE)
+## 수정 기능 구현
 ```javascript
+function Update(props){
+  const [title, setTitle] = useState(props.title);
+  const [body, setBody] = useState(props.body);
+  return <article>
+    <h2>Update</h2>
+    <form onSubmit={event=>{
+      event.preventDefault();
+      const title = event.target.title.value;
+      const body = event.target.body.value;
+      props.onUpdate(title, body);
+    }}>
+      <p><input type="text" name="title" placeholder="title" value={title} onChange={event=>{
+        setTitle(event.target.value);
+      }}/></p>
+      <p><textarea name="body" placeholder="body" value={body} onChange={event=>{
+        setBody(event.target.value);
+      }}></textarea></p>
+      <p><input type="submit" value="Update"></input></p>
+    </form>
+  </article>
+}
 
+function App() {
+   const [id, setId] = useState(null);
 
+   const [topics, setTopics] = useState([
+     {id:1, title:'html', body:'html is ...'},
+     {id:2, title:'css', body:'css is ...'},
+     {id:3, title:'javascript', body:'javascript is ...'}
+   ]);
+
+    let title, body = null;
+
+    for(let i=0; i<topics.length; i++){
+      if(topics[i].id === id){
+        title = topics[i].title;
+        body = topics[i].body;
+      }
+    }
+
+    return <Update title={title} body={body} onUpdate={(title, body)=>{
+      console.log(title, body);
+      const newTopics = [...topics]
+      const updatedTopic = {id:id, title:title, body:body}
+
+      for(let i=0; i<newTopics.length; i++){
+        if(newTopics[i].id === id){
+          newTopics[i] = updatedTopic;
+          break;
+        }
+      }
+      setTopics(newTopics);
+    }}></Update>   
+}
 ```
 </br></br>
 
@@ -188,5 +240,5 @@ function App() {
 
 
 
-## 삭제 기능 구현(DELETE)
+## 삭제 기능 구현
 </br></br>
