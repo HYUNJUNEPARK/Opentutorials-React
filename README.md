@@ -237,8 +237,31 @@ function App() {
 </br></br>
 
 
-
-
-
 ## 삭제 기능 구현
+```javascript
+fun App() {
+   const [topics, setTopics] = useState([
+     {id:1, title:'html', body:'html is ...'},
+     {id:2, title:'css', body:'css is ...'},
+     {id:3, title:'javascript', body:'javascript is ...'}
+   ]);   
+
+   return <>
+      <li><a href={'/update/'+id} onClick={event=>{
+        event.preventDefault();
+        setMode('UPDATE');
+      }}>Update</a></li>
+
+      <li><input type="button" value="Delete" onClick={()=>{
+        const newTopics = []
+        for(let i=0; i<topics.length; i++){
+          if(topics[i].id !== id){
+            newTopics.push(topics[i]);
+          }
+        }
+        setTopics(newTopics);
+      }} /></li>
+    </>
+}
+```
 </br></br>
