@@ -1,5 +1,7 @@
 # React
 
+[이벤트](#이벤트)
+
 
 ## 실습환경 구축
 1. stackblitz: 환경 세팅 없이 Web에서 React 실행  
@@ -50,7 +52,7 @@ https://code.visualstudio.com/Download
 - 컴포넌트에 외부에서 값을 전달하는 방법
 - 읽기 전용 (immutable): 자식 컴포넌트는 props를 직접 수정할 수 없다.
 
-```javasript
+```javascript
 // props 예시
 // 1.부모 → 자식 데이터 전달
 function Header(props){
@@ -75,7 +77,7 @@ function Greeting({ name, age }) {
 </br></br>
 
 
-## 이벤트   
+## 이벤트
 - “사용자가 웹 화면에서 뭘 했을 때, 우리 코드가 어떻게 반응할지”를 정의하는 장치
 ```javascript
 function Header(props){
@@ -119,8 +121,7 @@ function Counter() {
 </br></br>
 
 
-## 생성 기능 구현
-
+## 생성 기능 구현(CREATE)
 ```javascript
 import {useState} from 'react';
 
@@ -163,17 +164,19 @@ function App() {
 }
 
 ```
+</br></br>
 
 
+## 수정 기능 구현(UPDATE)
+```javascript
+
+
+```
 </br></br>
 
 
 
 
 
-
-
-
-## 수정 기능 구현
+## 삭제 기능 구현(DELETE)
 </br></br>
-## 삭제 기능 구현
