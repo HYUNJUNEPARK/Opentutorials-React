@@ -275,12 +275,13 @@ fun App() {
 
 
 ## JSX 문법
-
 1. class 넣을 땐 `className`   
 2. 변수 넣을 땐 `{중괄호}` 사용
 3. style 넣을 땐 `style={ {스타일명:'값'} }`   
    e.g. style={ {color : 'red', fontSize: '16px'} } * font-size 처럼 - 기호 사용 금지: '-'은 javascript 에서 '뺄셈'기능
 
+## Javascript 문법   
+1. 함수 만드는 문법 `()=>{}` e.g. `<span onClick={ () => { console.log(1) } }> Like </span>`
 
 
 
