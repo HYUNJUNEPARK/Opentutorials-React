@@ -27,11 +27,17 @@ https://code.visualstudio.com/Download
 4. VSCode  
 
 - 상단바 Terminal > New Terminal > zsh Terminal 사용(일부 터미털에서 커멘드 동작 안함)
-- ```npx create-react-app .```
+- ```npx create-react-app my-app```  or  ```npx create-react-app .```   
+     ** '허가되지 않은 스크립트 관련 에러'
+   - (Window)Windows PowerShell > 우클릭 관리자 권한으로 실행 > Set-ExecutionPolicy Unrestricted
+   - (Mac)sudo npx create-react-app my app
+  
 - ```npm start``` 3000포트를 사용하는 웹앱이 실행됨(src/index.js 파일을 실행 시킴)
 
    - npm (Node Package Manager): Node.js에서 사용하는 패키지 관리자   
-   - npx (Node Package eXecute): npm과 함께 제공되는 실행 도구   
+   - npx (Node Package eXecute): npm과 함께 제공되는 실행 도구
+   - JSX: JavaScript 안에서 HTML과 비슷한 문법을 사용할 수 있게 해주는 문법 확장. React의 Javascript 에서 return 해주고 있는 것은 html이 아니라 JSX임
+
 </br></br>
 
 
@@ -46,9 +52,6 @@ https://code.visualstudio.com/Download
 3. ```npx serve -s build```
    - -s는 --single의 줄임말
    - SPA(React, Vue 같은 Single Page App)에서 라우팅이 꼬이지 않도록, 모든 경로 요청을 index.html로 돌려준다.
-
-4. 크롬 개발자 도구 실행  
-   - 오른쪽 상단 점 3개(⋮) 클릭 →  도구 더보기 → 개발자 도구 선택 → 열린 창에서 Console 탭 클릭
 </br></br>
 
 
@@ -110,6 +113,10 @@ function Header(props){
 ## state  
 - 컴포넌트가 가지고 있는 동적인 데이터(변하는 값)를 저장하는 객체
 - 한 번 렌더링된 후에도 사용자 입력, 네트워크 응답, 내부 로직 등에 따라 값이 바뀔 수 있는 데이터들을 관리할 때 사용
+- Destructuring 문법   
+   - 배열이나 객체의 값을 쉽게 꺼내서 변수에 담을 수 있는 문법
+   - 긴 코드를 짧고 직관적으로 줄여주기 때문에 리액트에서 props, state를 다룰 때 자주 사용   
+   - e.g. let [a, c] = [1, 2];   
 
 ```javascript
 import React, { useState } from "react";
@@ -265,3 +272,17 @@ fun App() {
 }
 ```
 </br></br>
+
+
+## JSX 문법
+
+1. class 넣을 땐 `className`   
+2. 변수 넣을 땐 `{중괄호}` 사용
+3. style 넣을 땐 `style={ {스타일명:'값'} }`   
+   e.g. style={ {color : 'red', fontSize: '16px'} } * font-size 처럼 - 기호 사용 금지: '-'은 javascript 에서 '뺄셈'기능
+
+
+
+
+
+
