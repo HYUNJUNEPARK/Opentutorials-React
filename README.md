@@ -32,6 +32,15 @@ https://code.visualstudio.com/Download
    - (Window)Windows PowerShell > 우클릭 관리자 권한으로 실행 > Set-ExecutionPolicy Unrestricted
    - (Mac)sudo npx create-react-app my app
   
+- ```npm i react-router-dom``` : 라우터 설치   
+     ** sh: react-scripts: command not found 에러   
+    `rm -rf node_modules package-lock.json` //잘못된 설치물 정리   
+    `npm i -E react-scripts@5.0.1` //react-scripts 올바른 버전 고정 설치   
+    `npm install` //나머지 의존성 설치
+
+# 4) 실행
+npm start
+  
 - ```npm start``` 3000포트를 사용하는 웹앱이 실행됨(src/index.js 파일을 실행 시킴)
 
    - npm (Node Package Manager): Node.js에서 사용하는 패키지 관리자   
