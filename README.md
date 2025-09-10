@@ -2,14 +2,13 @@
 
 
 [1. 실습환경구축](#실습환경-구축)  
-[2. 소스코드 수정 방법](#소스코드-수정-방법)  
-[3. 컴포넌트 만들기](#컴포넌트-만들기)  
-[4. props](#props)   
-[5. 이벤트  ](#이벤트)  
-[6. state ](#state)    
-[7. 생성 기능 구현](#생성-기능-구현)  
-[8. 수정 기능 구현](#수정-기능-구현)  
-[9. 삭제 기능 구현](#삭제-기능-구현)   
+[2. 컴포넌트 만들기](#컴포넌트-만들기)  
+[3. props](#props)   
+[4. 이벤트  ](#이벤트)  
+[5. state ](#state)    
+[6. 생성 기능 구현](#생성-기능-구현)  
+[7. 수정 기능 구현](#수정-기능-구현)  
+[8. 삭제 기능 구현](#삭제-기능-구현)   
 </br></br>
 
 
@@ -24,7 +23,7 @@ LTS 설치 권장
 3. VScode  
 https://code.visualstudio.com/Download
 
-4. VSCode  
+4. 프로젝트 생성 
 
 - 상단바 Terminal > New Terminal > zsh Terminal 사용(일부 터미털에서 커멘드 동작 안함)
 - ```npx create-react-app my-app```  or  ```npx create-react-app .```   
@@ -38,7 +37,9 @@ https://code.visualstudio.com/Download
     `npm i -E react-scripts@5.0.1` //react-scripts 올바른 버전 고정 설치   
     `npm install` //나머지 의존성 설치
 
-# 4) 실행
+- ```npm create vite@latest``` : Vite + React
+  
+5. 실행
 npm start
   
 - ```npm start``` 3000포트를 사용하는 웹앱이 실행됨(src/index.js 파일을 실행 시킴)
@@ -47,22 +48,14 @@ npm start
    - npx (Node Package eXecute): npm과 함께 제공되는 실행 도구
    - JSX: JavaScript 안에서 HTML과 비슷한 문법을 사용할 수 있게 해주는 문법 확장. React의 Javascript 에서 return 해주고 있는 것은 html이 아니라 JSX임
 
-</br></br>
-
-
-## 소스코드 수정 방법
-1. ```터미널에서 ctrl+c```
-   - 기존 개발환경 종료
-
-2. ```npm run buid```   
+- ```npm run buid```   
    - 배포판을 생성
    - 개발용 소스(src/)를 최적화된 정적 파일로 변환해서 build/ 폴더를 만든다. -> build/ 안에는 실제 서버에 올릴 수 있는 HTML, CSS, JS 파일만 남음.
 
-3. ```npx serve -s build```
+- ```npx serve -s build```
    - -s는 --single의 줄임말
    - SPA(React, Vue 같은 Single Page App)에서 라우팅이 꼬이지 않도록, 모든 경로 요청을 index.html로 돌려준다.
 </br></br>
-
 
 ## 컴포넌트 만들기
 - 컴포넌트(사용자 정의 태그)를 만들 때는 함수 사용한다. 이때 컴포넌트 명명법은 대문자로 시작하며, 소문자는 html 태그를 의미한다.
